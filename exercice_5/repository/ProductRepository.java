@@ -13,7 +13,7 @@ public class ProductRepository {
         this.products = products;
     }
 
-    public Product getProductById(Long id) {
+    public Product getProductById(Long id) throws ProductNotFoundException {
         return products.stream()
                 .filter(product -> product.getId().equals(id))
                 .findFirst()
